@@ -1,5 +1,4 @@
-
-export { default as Ecommerce } from './Ecommerce';
+export { default as SnapShot } from './SnapShot';
 export { default as Kanban } from './Kanban';
 export { default as Orders } from './Orders';
 export { default as Employees } from './Employees';
@@ -15,3 +14,10 @@ export { default as Line } from './Charts/Line';
 export { default as Pie } from './Charts/Pie';
 export { default as Pyramid } from './Charts/Pyramid';
 export { default as Stacked } from './Charts/Stacked';
+export { default as SignIn } from './SignIn';
+export { default as ConfigureAPI } from './ConfigureAPI';
+export { default as SendInvoice } from './SendInvoice';
+export { default as Automations } from './Automations';
+export { default as Automate } from './Automate';
+export { default as ApiPage} from './ApiPage'
+export { default as ExternalService} from './ExternalService'

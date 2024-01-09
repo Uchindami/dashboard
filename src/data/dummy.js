@@ -33,6 +33,73 @@ export const gridOrderImage = (props) => (
   </div>
 );
 
+
+export const getData = () => {
+  const data = [
+    {
+      name: 'Jane Cooper',
+      email: 'jane.cooper@example.com',
+      title: 'Regional Paradigm Technician',
+      department: 'Optimization',
+      status: 'Active',
+      role: 'Admin',
+      age: 27,
+      imgUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+    },
+    {
+      name: 'Cody Fisher',
+      email: 'cody.fisher@example.com',
+      title: 'Product Directives Officer',
+      department: 'Intranet',
+      status: 'Inactive',
+      role: 'Owner',
+      age: 43,
+      imgUrl: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+    },
+    {
+      name: 'Esther Howard',
+      email: 'esther.howard@example.com',
+      title: 'Forward Response Developer',
+      department: 'Directives',
+      status: 'Active',
+      role: 'Member',
+      age: 32,
+      imgUrl: 'https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+    },
+    {
+      name: 'Jenny Wilson',
+      email: 'jenny.wilson@example.com',
+      title: 'Central Security Manager',
+      department: 'Program',
+      status: 'Offline',
+      role: 'Member',
+      age: 29,
+      imgUrl: 'https://images.unsplash.com/photo-1498551172505-8ee7ad69f235?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+    },
+    {
+      name: 'Kristin Watson',
+      email: 'kristin.watson@example.com',
+      title: 'Lean Implementation Liaison',
+      department: 'Mobility',
+      status: 'Inactive',
+      role: 'Admin',
+      age: 36,
+      imgUrl: 'https://images.unsplash.com/photo-1532417344469-368f9ae6d187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+    },
+    {
+      name: 'Cameron Williamson',
+      email: 'cameron.williamson@example.com',
+      title: 'Internal Applications Engineer',
+      department: 'Security',
+      status: 'Active',
+      role: 'Member',
+      age: 24,
+      imgUrl: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+    },
+  ]
+  return [...data, ...data, ...data]
+}
+
 export const gridOrderStatus = (props) => (
   <button
     type="button"
@@ -65,10 +132,11 @@ const gridEmployeeProfile = (props) => (
   <div className="flex items-center gap-2">
     <img
       className="rounded-full w-10 h-10"
-      src={props.EmployeeImage}
+      src={props.photo}
       alt="employee"
     />
-    <p>{props.Name}</p>
+    <p>{props.firstName}</p>
+    <p>{props.lastName}</p>
   </div>
 );
 
@@ -78,6 +146,7 @@ const gridEmployeeCountry = (props) => (
     <span>{props.Country}</span>
   </div>
 );
+
 export const EditorData = () => (
   <div>
     <h3>
@@ -438,13 +507,14 @@ export const employeesGrid = [
     width: '150',
     template: gridEmployeeProfile,
     textAlign: 'Center' },
+
   { field: 'Name',
     headerText: '',
     width: '0',
     textAlign: 'Center',
   },
-  { field: 'Title',
-    headerText: 'Designation',
+  { field: 'emailAddress',
+    headerText: 'emailAddress',
     width: '170',
     textAlign: 'Center',
   },
@@ -453,110 +523,24 @@ export const employeesGrid = [
     textAlign: 'Center',
     template: gridEmployeeCountry },
 
-  { field: 'HireDate',
-    headerText: 'Hire Date',
+  { field: 'Department',
+    headerText: 'Department',
     width: '135',
     format: 'yMd',
     textAlign: 'Center' },
 
-  { field: 'ReportsTo',
-    headerText: 'Reports To',
+  { field: 'accessLevelKey',
+    headerText: 'accessLevelKey',
     width: '120',
     textAlign: 'Center' },
-  { field: 'EmployeeID',
+  { field: '_id',
     headerText: 'Employee ID',
     width: '125',
     textAlign: 'Center' },
 ];
 
-export const links = [
-  {
-    title: 'Dashboard',
-    links: [
-      {
-        name: 'ecommerce',
-        icon: <FiShoppingBag />,
-      },
-    ],
-  },
 
-  {
-    title: 'Pages',
-    links: [
-      {
-        name: 'orders',
-        icon: <AiOutlineShoppingCart />,
-      },
-      {
-        name: 'employees',
-        icon: <IoMdContacts />,
-      },
-      {
-        name: 'customers',
-        icon: <RiContactsLine />,
-      },
-    ],
-  },
-  {
-    title: 'Apps',
-    links: [
-      {
-        name: 'calendar',
-        icon: <AiOutlineCalendar />,
-      },
-      {
-        name: 'kanban',
-        icon: <BsKanban />,
-      },
-      {
-        name: 'editor',
-        icon: <FiEdit />,
-      },
-      {
-        name: 'color-picker',
-        icon: <BiColorFill />,
-      },
-    ],
-  },
-  {
-    title: 'Charts',
-    links: [
-      {
-        name: 'line',
-        icon: <AiOutlineStock />,
-      },
-      {
-        name: 'area',
-        icon: <AiOutlineAreaChart />,
-      },
 
-      {
-        name: 'bar',
-        icon: <AiOutlineBarChart />,
-      },
-      {
-        name: 'pie',
-        icon: <FiPieChart />,
-      },
-      {
-        name: 'financial',
-        icon: <RiStockLine />,
-      },
-      {
-        name: 'color-mapping',
-        icon: <BsBarChart />,
-      },
-      {
-        name: 'pyramid',
-        icon: <GiLouvrePyramid />,
-      },
-      {
-        name: 'stacked',
-        icon: <AiOutlineBarChart />,
-      },
-    ],
-  },
-];
 
 export const cartData = [
   {
